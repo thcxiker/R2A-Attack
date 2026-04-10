@@ -57,8 +57,8 @@ If you find this work useful, please consider citing:
 ```bibtex
 @article{r2a_attack,
   title   = {Route-to-Rome Attack: Directing LLM Routers to Expensive Models via Adversarial Suffix Optimization},
-  author  = {},
-  journal = {},
+  author  = {Authors},
+  journal = {Venue},
   year    = {2025}
 }
 ```
