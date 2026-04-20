@@ -24,7 +24,7 @@ If you find this work helpful, please consider citing our paper:
 ```bibtex
 @inproceedings{tang2026routeromeattackdirecting,
       title={Route to Rome Attack: Directing LLM Routers to Expensive Models via Adversarial Suffix Optimization}, 
-      author={Tang, Haochun and Yan, Yuliang and Lu, Jiahua and Liu, Huaxiao and Dai, Enyan},
+      author={Haochun Tang and Yuliang Yan and Jiahua Lu and Huaxiao Liu and Enyan Dai},
       booktitle={Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026)},
       year={2026}
 }
