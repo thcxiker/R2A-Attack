@@ -1,0 +1,72 @@
+# Example evaluation/attack configuration.
+# Replace paths with your local model checkpoints.
+
+eval:
+  adapter_checkpoint: ""
+  adapter_device: "cuda"
+  adapter_text_embedder: "sentence-transformers/all-MiniLM-L6-v2"
+
+  gcg_config:
+    num_steps: 
+    search_width:
+    topk: 
+    n_replace: 1
+    vstar_k: 
+    device: "cuda:0"
+    verbose: false
+
+  router_encoder_pairs:
+    - name: "routellm-causal"
+      trainable: true
+      router:
+        router_type: "routellm"
+        args:
+          name: "routellm_causal"
+          type: "causal_llm"
+          strong_model: "gpt-4"
+          weak_model: "mixtral-8x7b"
+          device: "cuda"
+    - name: "routellm-bert"
+      trainable: true
+      router:
+        router_type: "routellm"
+        args:
+          name: "routellm-bert"
+          type: "bert"
+          strong_model: "gpt-4"
+          weak_model: "mixtral-8x7b"
+          device: "cuda"
+    - name: "routerdc-test"
+      trainable: true
+      router:
+        router_type: "routerdc"
+        args:
+          name: "routerdc-test"
+    - name: "graph_router"
+      trainable: true
+      encoder_name: "all-MiniLM-L6-v2"
+      encoder_device: "cuda"
+      router:
+        router_type: "graphrouter"
+        args:
+          name: "graphrouter-test"
+
+  target_router:
+    router_type: "p2l"
+    args:
+      name: "p2l-7b"
+      model_path: ""
+      model_type: "qwen2"
+      head_type: "bt"
+      loss_type: "bt"
+      device: "auto"
+      local_files_only: true
+      consider_cost: true
+
+  gcg_runtime:
+    test_set_path: ""
+    output_report_path: ""
+    train_ratio: 0.7
+    max_iterations_per_sample: 10
+    max_stage_iterations: 5
+    random_seed: 42
