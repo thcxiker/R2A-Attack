@@ -1,0 +1,7 @@
+# Paper setting, target = routellm_bert: the target is removed from the five-router pool
+# {RouteLLM-BERT, RouteLLM-Causal, P2L, GraphRouter, RouterDC}.
+base: ../base.yaml
+experiment: {name: paper_routellm_bert}
+target: {router: routellm_bert, consider_cost: true}
+ensemble:
+  members: [routellm_causal, p2l_7b, graphrouter, routerdc]

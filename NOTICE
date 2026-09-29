@@ -1,0 +1,16 @@
+Route to Rome Attack (R2A)
+Copyright 2026 Haochun Tang, Yuliang Yan, Jiahua Lu, Huaxiao Liu, Enyan Dai
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This product includes third-party software:
+
+* RouteLLM (https://github.com/lm-sys/RouteLLM), Apache License 2.0.
+  Modified copy in r2a/third_party/routellm/ (see r2a/third_party/routellm/LICENSE).
+* GraphRouter (https://github.com/ulab-uiuc/GraphRouter), MIT License.
+  Modified model code and trained weights in r2a/third_party/graphrouter/
+  (see r2a/third_party/graphrouter/LICENSE).
+
+Prompt-to-Leaderboard (https://github.com/lmarena/p2l) is not redistributed;
+scripts/setup_p2l.sh downloads it. The P2L, RouteLLM and other model
+checkpoints are downloaded from the Hugging Face Hub under their own licenses.

@@ -1,0 +1,22 @@
+# Paper setting, target = OpenRouter (a commercial black-box router).
+# The surrogate is trained from logged routing decisions (the model OpenRouter
+# picked for each prompt); the router itself is never queried by this code.
+# Put the logs under data/openrouter_logs/ (format: see r2a/blackbox.py,
+# load_decision_logs). Logged prompts that appear in an evaluation set (e.g.
+# ArenaHard, SimpleQA) are dropped automatically. Evaluation needs live OpenRouter calls and is not part
+# of this repository: run `r2a surrogate` and `r2a attack`, then send the
+# suffix in outputs/paper_openrouter/trained_suffix.json to OpenRouter.
+base: ../base.yaml
+experiment: {name: paper_openrouter}
+target: {router: null}
+ensemble:
+  members: [routellm_bert, routellm_causal, p2l_7b, graphrouter, routerdc]
+surrogate:
+  decision_logs:
+    - data/openrouter_logs/aime.json
+    - data/openrouter_logs/arenahard.json
+    - data/openrouter_logs/gpqa.json
+    - data/openrouter_logs/hle.json
+    - data/openrouter_logs/livemathbench.json
+    - data/openrouter_logs/mmlupro.json
+    - data/openrouter_logs/simpleqa.json

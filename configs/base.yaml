@@ -1,0 +1,103 @@
+# Shared defaults. Experiment configs set `base: ../base.yaml` and override
+# `experiment`, `target` and `ensemble`. Defaults follow the paper (Appendix,
+# Tables "Hyperparameters for hybrid ensemble surrogate router training" and
+# "Hyperparameters for adversarial suffix optimization").
+
+experiment:
+  name: r2a
+  output_dir: null          # default: outputs/<name>
+  seed: 42
+  device: cuda:0            # device of the surrogate adapter and the GCG buffers
+  log_level: INFO
+
+# ---------------------------------------------------------------- routers
+# Every router that can be a target or an ensemble member. `type` selects the
+# adapter in r2a/routers, `args` are passed to it. Model paths may be Hugging
+# Face repo ids or local directories (relative paths are relative to the repo).
+# `member_consider_cost: true` makes the router use its cost-aware scores also
+# when it is an ensemble member. RouteLLM routers score only [strong, weak]; the
+# surrogate z-normalizes each router's scores, so without the threshold shift a
+# RouteLLM member would always contribute the same constant [+1, -1].
+routers:
+  routellm_bert:            # RouteLLM BERT classifier (XLM-R base)
+    type: routellm
+    member_consider_cost: true
+    args: {type: bert, strong_model: gpt-4, weak_model: mixtral-8x7b, device: cuda:0}
+  routellm_causal:          # RouteLLM causal-LLM classifier (Llama-3-8B, ~16 GB)
+    type: routellm
+    member_consider_cost: true
+    args: {type: causal_llm, strong_model: gpt-4, weak_model: mixtral-8x7b, device: cuda:0, device_map: cuda:0}
+  routellm_mf:              # RouteLLM matrix factorization; needs OPENAI_API_KEY (target only)
+    type: routellm
+    args: {type: mf, strong_model: gpt-4, weak_model: mixtral-8x7b, device: cuda:0}
+  p2l_7b:                   # ~15 GB; on the second GPU so that Llama-3-8B and P2L-7B backprop fit
+    type: p2l
+    args: {model_path: lmarena-ai/p2l-7b-grk-02222025, model_type: qwen2, head_type: bt, loss_type: bt, device: cuda:1}
+  p2l_1_5b:
+    type: p2l
+    args: {model_path: lmarena-ai/p2l-1.5b-bt-01132025, model_type: qwen2, head_type: bt, loss_type: bt, device: cuda:0}
+  p2l_0_5b:
+    type: p2l
+    args: {model_path: lmarena-ai/p2l-0.5b-bt-01132025, model_type: qwen2, head_type: bt, loss_type: bt, device: cuda:0}
+  graphrouter:
+    type: graphrouter
+    args: {device: cuda:0}
+  routerdc:                 # checkpoint: see README ("Model assets")
+    type: routerdc
+    args: {checkpoint_path: checkpoints/routerdc/best_model.pth, device: cuda:0}
+
+target:
+  router: routellm_bert
+  consider_cost: true       # the deployed (cost-aware) routing rule
+
+ensemble:
+  members: []               # open-source routers of the surrogate; the target is excluded
+
+model_classification: configs/model_classification.yaml
+
+# ---------------------------------------------------------------- data
+data:
+  proxy_pool: data/proxy_pool.json          # D_proxy: prompts sent to the target
+  suffix_set: data/in_distribution.json     # split into D_suffix / D_eval
+  train_ratio: 0.7
+  eval_sets:                                # evaluated in addition to D_eval
+    ood: {path: data/ood.json}
+
+# ---------------------------------------------------------------- stage 1
+# Black-box: the target is only asked *which model it selects*
+# (r2a/blackbox.py), at most `query_budget` times. Prompts of D_suffix and of
+# every evaluation set are never used here.
+surrogate:
+  query_budget: 120         # Q
+  decision_loss: blackbox_hybrid  # label-smoothed CE: 0.1 * KL(smoothed one-hot) + 10 * CE | ce
+  label_smoothing: 0.2
+  target_pool: observed     # observed: models seen in the decisions | declared: the target's advertised candidate list
+  decision_logs: null       # list of logged-decision files; if set, the target is never queried
+  val_ratio: 0.2
+  epochs: 20
+  batch_size: 32
+  lr: 0.03
+  optimizer: adamw
+  rank: 16                  # r
+  embedding_dim: 384
+  text_embedder: sentence-transformers/all-MiniLM-L6-v2
+  patience: 10
+
+# ---------------------------------------------------------------- stage 2
+attack:
+  loss: strong_promotion    # L_A = 1 - sum_{strong} p
+  init_suffix: "! ! ! ! ! ! ! ! ! !"
+  search_width: 64          # B
+  topk: 256                 # |C_i|
+  n_replace: 1
+  max_suffix_tokens: 30     # Delta
+  max_total_steps: 3000     # T
+  max_train_samples: null
+  log_every: 10
+  prefix_mode: false
+
+# ---------------------------------------------------------------- stage 3
+evaluation:
+  suffixes:                 # evaluated next to "clean" and the trained suffix ("r2a")
+    cot: " Let's think step by step."
+  max_samples: null

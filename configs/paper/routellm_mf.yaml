@@ -1,0 +1,7 @@
+# Paper setting, target = routellm_mf (not in the pool, so all five routers are used).
+# RouteLLM-MF embeds prompts with OpenAI embeddings: export OPENAI_API_KEY.
+base: ../base.yaml
+experiment: {name: paper_routellm_mf}
+target: {router: routellm_mf, consider_cost: true}
+ensemble:
+  members: [routellm_bert, routellm_causal, p2l_7b, graphrouter, routerdc]

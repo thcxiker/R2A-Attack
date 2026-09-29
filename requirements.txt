@@ -1,0 +1,19 @@
+# Versions of the environment the release was tested with (Python 3.10, CUDA 12.x).
+torch==2.1.0
+transformers==4.49.0
+tokenizers==0.21.4
+accelerate==1.10.1
+sentence-transformers==5.1.2
+torch-geometric==2.7.0
+huggingface-hub==0.34.4
+datasets==4.4.2
+safetensors==0.6.2
+sentencepiece==0.2.1
+protobuf==6.32.0
+numpy==1.26.4
+pandas==2.2.3
+scikit-learn==1.6.1
+pydantic==2.11.9
+openai==1.102.0
+PyYAML==6.0.2
+tqdm==4.67.1

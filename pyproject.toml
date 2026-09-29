@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "r2a"
+version = "1.0.0"
+description = "Route-to-Rome Attack: directing LLM routers to expensive models via adversarial suffix optimization"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.1",
+    "transformers>=4.45,<4.50",
+    "accelerate>=0.33",
+    "sentence-transformers>=3.0",
+    "torch-geometric>=2.5",
+    "huggingface-hub>=0.24",
+    "datasets>=2.20",
+    "sentencepiece",
+    "protobuf",
+    "numpy<2",
+    "pandas",
+    "scikit-learn",
+    "pydantic>=2",
+    "openai>=1.0",
+    "PyYAML",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+r2a = "r2a.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["r2a*"]
+
+[tool.setuptools.package-data]
+"r2a.third_party.graphrouter" = ["configs/*", "model_path/*", "LICENSE"]
+"r2a.third_party.routellm" = ["LICENSE", "routers/causal_llm/*.txt"]

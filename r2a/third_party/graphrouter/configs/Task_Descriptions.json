@@ -1,0 +1,41 @@
+{
+    "alpaca_data": {
+        "feature": "This is a relatively small-sized model (8 billion parameters) designed for general-purpose\nlanguage tasks. Its low cost per million tokens (0.2) makes it an affordable option for many\napplications requiring quick responses with moderate accuracy."
+    },
+    "gsm8k": {
+        "feature": "The GSM8K dataset is tailored for mathematical problem-solving tasks. It consists of natural language math problems that require the model to comprehend the problem statement, apply the correct mathematical operations, and provide the solution. The primary challenge lies in both parsing complex language and performing accurate calculations."
+    },
+    "multi_news": {
+        "feature": "The Multi-News dataset is aimed at text summarization tasks. It contains multiple news articles on the same topic, and the model's objective is to generate a concise and comprehensive summary that integrates information from all the articles. The challenge is to distill key points while maintaining coherence and avoiding redundancy."
+    },
+    "mmlu": {
+        "feature": "The MMLU (Massive Multitask Language Understanding) dataset evaluates models across 57 diverse academic subjects spanning STEM, humanities, social sciences, and professional domains. It requires the model to demonstrate broad knowledge coverage, logical reasoning, and the ability to select correct answers from multiple-choice questions. The primary challenge is handling the wide range of specialized knowledge domains, from elementary mathematics to advanced law and medicine."
+    },
+    "mtbench": {
+        "feature": "The MT-Bench (Multi-Turn Benchmark) dataset assesses multi-turn conversational abilities across various scenarios including writing, roleplay, reasoning, mathematics, coding, extraction, STEM knowledge, and humanities. It challenges models to maintain context coherence across multiple dialogue turns, follow complex instructions, demonstrate specialized domain expertise, and provide helpful, coherent responses in extended conversations. The key difficulty lies in sustaining high-quality engagement through dynamic multi-step interactions."
+    },
+    "simpleqa": {
+        "feature": "The SimpleQA dataset focuses on factual question-answering tasks with straightforward, factual answers. It evaluates models' ability to retrieve and provide accurate factual information about real-world entities, events, and concepts. The primary challenge lies in factual accuracy and the model's knowledge cutoff, requiring precise responses to direct factual queries without complex reasoning."
+    },
+    "mmlupro": {
+        "feature": "The MMLU-Pro dataset is an enhanced version of MMLU that focuses on more challenging and diverse professional and academic subjects. It requires models to demonstrate advanced domain expertise across STEM, healthcare, law, and other specialized fields. The key difficulty is handling nuanced, complex questions that require deep subject matter knowledge and sophisticated reasoning across multiple disciplines."
+    },
+    "livemathbench": {
+        "feature": "The LiveMathBench dataset is designed for mathematical problem-solving with emphasis on dynamic, real-world mathematical challenges. It includes problems requiring symbolic computation, algebraic manipulation, calculus, and complex mathematical reasoning. The primary challenge lies in combining mathematical knowledge with logical reasoning to solve multi-step problems and generate correct mathematical expressions."
+    },
+    "hle": {
+        "feature": "The HLE (Heads-up Likert Evaluation) dataset assesses models' ability to perform nuanced evaluations and comparative analysis tasks. It requires models to make fine-grained distinctions between options, provide detailed reasoning for rankings, and handle subjective evaluation criteria. The challenge involves balancing multiple competing factors and providing coherent justifications for comparative judgments."
+    },
+    "gpqa": {
+        "feature": "The GPQA (Google-Proof QA) dataset consists of extremely challenging graduate-level questions designed to be difficult to find answers to via search engines. It evaluates deep understanding of specialized domains including physics, chemistry, biology, and other advanced scientific fields. The primary challenge is requiring genuine domain expertise and complex reasoning rather than surface-level information retrieval."
+    },
+    "aime": {
+        "feature": "The AIME (American Invitational Mathematics Examination) dataset contains challenging high school mathematics competition problems requiring creative problem-solving, advanced mathematical techniques, and rigorous logical reasoning. Problems involve algebra, geometry, trigonometry, combinatorics, and number theory. The key difficulty lies in the need for sophisticated mathematical insights and multi-step solution strategies."
+    },
+    "arenahard": {
+        "feature": "The ArenaHard dataset is a challenging benchmark derived from user conversations in the Arena platform, featuring difficult, open-ended questions spanning writing, coding, reasoning, mathematics, and creative tasks. It emphasizes real-world complexity with nuanced queries requiring multi-faceted reasoning, context understanding, and high-quality generation. The primary challenge is handling diverse task types while maintaining high standards of accuracy, coherence, and usefulness."
+    },
+    "routerarena": {
+        "feature": "RouterArena is a benchmark designed to evaluate the routing capabilities of language models across a diverse set of tasks and datasets. It assesses how effectively a model can identify the most suitable task or dataset for a given input, demonstrating task understanding, dataset selection, and adaptive reasoning. The primary challenge lies in accurately matching inputs to the correct task context, especially when faced with ambiguous or multi-domain queries."
+    }
+}

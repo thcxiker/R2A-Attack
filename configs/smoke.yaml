@@ -1,0 +1,19 @@
+# Minutes-long end-to-end check of the whole pipeline on tiny budgets.
+# Covers every router's gradient path: RouteLLM-Causal, P2L, GraphRouter and
+# RouterDC as members, RouteLLM-BERT as the target.
+#   python -m r2a run --config configs/smoke.yaml
+base: base.yaml
+experiment: {name: smoke}
+target: {router: routellm_bert, consider_cost: true}
+ensemble:
+  members: [routellm_causal, p2l_0_5b, graphrouter, routerdc]
+surrogate:
+  query_budget: 40
+  epochs: 3
+attack:
+  search_width: 8
+  topk: 32
+  max_total_steps: 12
+  max_train_samples: 3
+evaluation:
+  max_samples: 20

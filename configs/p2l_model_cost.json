@@ -1,0 +1,682 @@
+{
+  "model_configs": [
+    { "model_name": "RWKV-4-Raven-14B", "cost": 0.22 },
+    { "model_name": "alpaca-13b", "cost": 0.18 },
+    { "model_name": "bard-jan-24-gemini-pro", "cost": 7.2 },
+    { "model_name": "chatglm-6b", "cost": 0.12 },
+    { "model_name": "chatglm2-6b", "cost": 0.12 },
+    { "model_name": "chatglm3-6b", "cost": 0.12 },
+    { "model_name": "chatgpt-4o-latest-20250129", "cost": 12.9 },
+    { "model_name": "claude-1", "cost": 5.0 },
+    { "model_name": "claude-2.0", "cost": 6.0 },
+    { "model_name": "claude-2.1", "cost": 6.2 },
+    { "model_name": "claude-instant-1", "cost": 1.2 },
+    { "model_name": "codellama-34b-instruct", "cost": 0.45 },
+    { "model_name": "codellama-70b-instruct", "cost": 0.82 },
+    { "model_name": "deepseek-llm-67b-chat", "cost": 0.70 },
+    { "model_name": "deepseek-r1", "cost": 0.31 },
+    { "model_name": "dolly-v2-12b", "cost": 0.20 },
+    { "model_name": "dolphin-2.2.1-mistral-7b", "cost": 0.14 },
+    { "model_name": "early-grok-3", "cost": 16 },
+    { "model_name": "falcon-180b-chat", "cost": 2.2 },
+    { "model_name": "fastchat-t5-3b", "cost": 0.08 },
+    { "model_name": "gemini-2.0-flash-001", "cost": 0.46 },
+    { "model_name": "gemini-2.0-flash-lite-preview-02-05", "cost": 0.38 },
+    { "model_name": "gemini-2.0-flash-thinking-exp-01-21", "cost": 0.46 },
+    { "model_name": "gemini-2.0-pro-exp-02-05", "cost": 7.8 },
+    { "model_name": "gemini-pro", "cost": 7.2 },
+    { "model_name": "gemini-pro-dev-api", "cost": 7.2 },
+    { "model_name": "gemma-2b-it", "cost": 0.05 },
+    { "model_name": "gemma-7b-it", "cost": 0.09 },
+    { "model_name": "glm-4-plus-0111", "cost": 0.318 },
+    { "model_name": "gpt-3.5-turbo-0314", "cost": 1.8 },
+    { "model_name": "gpt-3.5-turbo-0613", "cost": 1.8 },
+    { "model_name": "gpt-3.5-turbo-1106", "cost": 1.8 },
+    { "model_name": "gpt4all-13b-snoozy", "cost": 0.18 },
+    { "model_name": "granite-3.1-2b-instruct", "cost": 0.04 },
+    { "model_name": "granite-3.1-8b-instruct", "cost": 0.12 },
+    { "model_name": "guanaco-33b", "cost": 0.45 },
+    { "model_name": "hunyuan-large-2025-02-10", "cost": 1.10 },
+    { "model_name": "hunyuan-standard-2025-02-10", "cost": 0.85 },
+    { "model_name": "koala-13b", "cost": 0.18 },
+    { "model_name": "llama-13b", "cost": 0.18 },
+    { "model_name": "llama-2-7b-chat", "cost": 0.12 },
+    { "model_name": "llama2-70b-steerlm-chat", "cost": 0.78 },
+    { "model_name": "mistral-7b-instruct", "cost": 0.14 },
+    { "model_name": "mistral-next", "cost": 4.5 },
+    { "model_name": "mistral-small-24b-instruct-2501", "cost": 0.30 },
+    { "model_name": "mpt-30b-chat", "cost": 0.45 },
+    { "model_name": "mpt-7b-chat", "cost": 0.12 },
+    { "model_name": "nous-hermes-2-mixtral-8x7b-dpo", "cost": 0.30 },
+    { "model_name": "o3-mini", "cost": 16.0 },
+    { "model_name": "o3-mini-high", "cost": 20.0 },
+    { "model_name": "oasst-pythia-12b", "cost": 0.20 },
+    { "model_name": "olmo-7b-instruct", "cost": 0.12 },
+    { "model_name": "openchat-3.5", "cost": 0.14 },
+    { "model_name": "openchat-3.5-0106", "cost": 0.14 },
+    { "model_name": "openhermes-2.5-mistral-7b", "cost": 0.14 },
+    { "model_name": "palm-2", "cost": 10.0 },
+    { "model_name": "phi-4", "cost": 0.22 },
+    { "model_name": "pplx-70b-online", "cost": 0.72 },
+    { "model_name": "pplx-7b-online", "cost": 0.14 },
+    { "model_name": "qwen-14b-chat", "cost": 0.20 },
+    { "model_name": "qwen-plus-0125", "cost": 0.42 },
+    { "model_name": "qwen1.5-4b-chat", "cost": 0.08 },
+    { "model_name": "qwen1.5-7b-chat", "cost": 0.14 },
+    { "model_name": "qwen2.5-max", "cost": 1.20 },
+    { "model_name": "solar-10.7b-instruct-v1.0", "cost": 0.20 },
+    { "model_name": "stablelm-tuned-alpha-7b", "cost": 0.12 },
+    { "model_name": "starling-lm-7b-alpha", "cost": 0.14 },
+    { "model_name": "starling-lm-7b-beta", "cost": 0.14 },
+    { "model_name": "step-2-16k-exp-202412", "cost": 0.31 },
+    { "model_name": "stripedhyena-nous-7b", "cost": 0.12 },
+    { "model_name": "tulu-2-dpo-70b", "cost": 0.82 },
+    { "model_name": "vicuna-13b", "cost": 0.18 },
+    { "model_name": "vicuna-33b", "cost": 0.45 },
+    { "model_name": "vicuna-7b", "cost": 0.12 },
+    { "model_name": "wizardlm-13b", "cost": 0.20 },
+    { "model_name": "wizardlm-70b", "cost": 0.82 },
+    { "model_name": "zephyr-7b-alpha", "cost": 0.14 },
+    { "model_name": "zephyr-7b-beta", "cost": 0.14 },
+    { "model_name": "zephyr-orpo-141b-A35b-v0.1", "cost": 2.2 },
+    {
+      "model_name": "amazon-nova-micro-v1.0",
+      "cost": 0.08
+    },
+    {
+      "model_name": "amazon-nova-lite-v1.0",
+      "cost": 0.12
+    },
+    {
+      "model_name": "amazon-nova-pro-v1.0",
+      "cost": 1.8
+    },
+    {
+      "model_name": "athene-70b-0725",
+      "cost": 0.75
+    },
+    {
+      "model_name": "c4ai-aya-expanse-8b",
+      "cost": 0.15
+    },
+    {
+      "model_name": "c4ai-aya-expanse-32b",
+      "cost": 0.45
+    },
+    {
+      "model_name": "chatgpt-4o-latest-20240808",
+      "cost": 12.5
+    },
+    {
+      "model_name": "chatgpt-4o-latest-20240903",
+      "cost": 12.6
+    },
+    {
+      "model_name": "claude-3-haiku-20240307",
+      "cost": 1.2
+    },
+    {
+      "model_name": "claude-3-sonnet-20240229",
+      "cost": 6.5
+    },
+    {
+      "model_name": "claude-3-opus-20240229",
+      "cost": 18.5
+    },
+    {
+      "model_name": "codestral-2405",
+      "cost": 2.8
+    },
+    {
+      "model_name": "command-r",
+      "cost": 1.5
+    },
+    {
+      "model_name": "command-r-plus",
+      "cost": 3.2
+    },
+    {
+      "model_name": "command-r-08-2024",
+      "cost": 1.6
+    },
+    {
+      "model_name": "command-r-plus-08-2024",
+      "cost": 3.4
+    },
+    {
+      "model_name": "dbrx-instruct-preview",
+      "cost": 2.9
+    },
+    {
+      "model_name": "deepseek-coder-v2",
+      "cost": 0.28
+    },
+    {
+      "model_name": "deepseek-coder-v2-0724",
+      "cost": 0.29
+    },
+    {
+      "model_name": "deepseek-v2-api-0628",
+      "cost": 0.25
+    },
+    {
+      "model_name": "deepseek-v2.5",
+      "cost": 0.31
+    },
+    {
+      "model_name": "deepseek-v2.5-1210",
+      "cost": 0.32
+    },
+    {
+      "model_name": "gemini-1.5-flash-8b-001",
+      "cost": 0.35
+    },
+    {
+      "model_name": "gemini-1.5-flash-8b-exp-0827",
+      "cost": 0.38
+    },
+    {
+      "model_name": "gemini-1.5-flash-exp-0827",
+      "cost": 0.52
+    },
+    {
+      "model_name": "gemini-1.5-pro-api-0409-preview",
+      "cost": 7.2
+    },
+    {
+      "model_name": "gemini-1.5-pro-exp-0801",
+      "cost": 7.5
+    },
+    {
+      "model_name": "gemini-1.5-pro-exp-0827",
+      "cost": 7.8
+    },
+    {
+      "model_name": "gemini-advanced-0514",
+      "cost": 11.5
+    },
+    {
+      "model_name": "gemini-exp-1114",
+      "cost": 6.9
+    },
+    {
+      "model_name": "gemini-exp-1121",
+      "cost": 7.0
+    },
+    {
+      "model_name": "gemma-1.1-2b-it",
+      "cost": 0.05
+    },
+    {
+      "model_name": "gemma-1.1-7b-it",
+      "cost": 0.09
+    },
+    {
+      "model_name": "gemma-2-2b-it",
+      "cost": 0.06
+    },
+    {
+      "model_name": "gemma-2-9b-it-simpo",
+      "cost": 0.11
+    },
+    {
+      "model_name": "glm-4-0116",
+      "cost": 0.29
+    },
+    {
+      "model_name": "glm-4-0520",
+      "cost": 0.30
+    },
+    {
+      "model_name": "gpt-3.5-turbo-0125",
+      "cost": 1.8
+    },
+    {
+      "model_name": "gpt-4-0314",
+      "cost": 15.5
+    },
+    {
+      "model_name": "gpt-4-0613",
+      "cost": 15.8
+    },
+    {
+      "model_name": "gpt-4-0125-preview",
+      "cost": 16.5
+    },
+    {
+      "model_name": "granite-3.0-2b-instruct",
+      "cost": 0.04
+    },
+    {
+      "model_name": "granite-3.0-8b-instruct",
+      "cost": 0.12
+    },
+    {
+      "model_name": "grok-2-2024-08-13",
+      "cost": 8.5
+    },
+    {
+      "model_name": "grok-2-mini-2024-08-13",
+      "cost": 3.2
+    },
+    {
+      "model_name": "hunyuan-standard-256k",
+      "cost": 0.85
+    },
+    {
+      "model_name": "internlm2_5-20b-chat",
+      "cost": 0.35
+    },
+    {
+      "model_name": "jamba-1.5-mini",
+      "cost": 0.22
+    },
+    {
+      "model_name": "jamba-1.5-large",
+      "cost": 1.8
+    },
+    {
+      "model_name": "llama-2-13b-chat",
+      "cost": 0.18
+    },
+    {
+      "model_name": "llama-2-70b-chat",
+      "cost": 0.65
+    },
+    {
+      "model_name": "llama-3-8b-instruct",
+      "cost": 0.14
+    },
+    {
+      "model_name": "llama-3.1-405b-instruct-bf16",
+      "cost": 2.5
+    },
+    {
+      "model_name": "llama-3.1-nemotron-51b-instruct",
+      "cost": 0.55
+    },
+    {
+      "model_name": "llama-3.1-nemotron-70b-instruct",
+      "cost": 0.78
+    },
+    {
+      "model_name": "llama-3.1-tulu-3-8b",
+      "cost": 0.16
+    },
+    {
+      "model_name": "llama-3.1-tulu-3-70b",
+      "cost": 0.82
+    },
+    {
+      "model_name": "llama-3.2-1b-instruct",
+      "cost": 0.03
+    },
+    {
+      "model_name": "llama-3.2-3b-instruct",
+      "cost": 0.08
+    },
+    {
+      "model_name": "ministral-8b-2410",
+      "cost": 0.13
+    },
+    {
+      "model_name": "mistral-7b-instruct-v0.2",
+      "cost": 0.14
+    },
+    {
+      "model_name": "mistral-medium",
+      "cost": 3.5
+    },
+    {
+      "model_name": "mistral-large-2402",
+      "cost": 4.2
+    },
+    {
+      "model_name": "mistral-large-2411",
+      "cost": 4.5
+    },
+    {
+      "model_name": "nemotron-4-340b-instruct",
+      "cost": 2.2
+    },
+    {
+      "model_name": "phi-3-mini-4k-instruct",
+      "cost": 0.07
+    },
+    {
+      "model_name": "phi-3-mini-4k-instruct-june-2024",
+      "cost": 0.075
+    },
+    {
+      "model_name": "phi-3-mini-128k-instruct",
+      "cost": 0.08
+    },
+    {
+      "model_name": "phi-3-small-8k-instruct",
+      "cost": 0.10
+    },
+    {
+      "model_name": "phi-3-medium-4k-instruct",
+      "cost": 0.18
+    },
+    {
+      "model_name": "qwen-max-0428",
+      "cost": 1.1
+    },
+    {
+      "model_name": "qwen-max-0919",
+      "cost": 1.15
+    },
+    {
+      "model_name": "qwen-plus-0828",
+      "cost": 0.42
+    },
+    {
+      "model_name": "qwen1.5-14b-chat",
+      "cost": 0.20
+    },
+    {
+      "model_name": "qwen1.5-32b-chat",
+      "cost": 0.35
+    },
+    {
+      "model_name": "qwen1.5-72b-chat",
+      "cost": 0.68
+    },
+    {
+      "model_name": "qwen1.5-110b-chat",
+      "cost": 0.95
+    },
+    {
+      "model_name": "qwen2-72b-instruct",
+      "cost": 0.72
+    },
+    {
+      "model_name": "qwen2.5-coder-32b-instruct",
+      "cost": 0.38
+    },
+    {
+      "model_name": "qwen2.5-plus-1127",
+      "cost": 0.85
+    },
+    {
+      "model_name": "qwq-32b-preview",
+      "cost": 0.40
+    },
+    {
+      "model_name": "reka-core-20240501",
+      "cost": 1.5
+    },
+    {
+      "model_name": "reka-core-20240722",
+      "cost": 1.6
+    },
+    {
+      "model_name": "reka-core-20240904",
+      "cost": 1.7
+    },
+    {
+      "model_name": "reka-flash-preview-20240611",
+      "cost": 0.45
+    },
+    {
+      "model_name": "reka-flash-20240722",
+      "cost": 0.48
+    },
+    {
+      "model_name": "reka-flash-20240904",
+      "cost": 0.52
+    },
+    {
+      "model_name": "reka-flash-21b-20240226",
+      "cost": 0.35
+    },
+    {
+      "model_name": "reka-flash-21b-20240226-online",
+      "cost": 0.38
+    },
+    {
+      "model_name": "smollm2-1.7b-instruct",
+      "cost": 0.025
+    },
+    {
+      "model_name": "snowflake-arctic-instruct",
+      "cost": 1.2
+    },
+    {
+      "model_name": "yi-34b-chat",
+      "cost": 0.42
+    },
+    {
+      "model_name": "yi-1.5-34b-chat",
+      "cost": 0.45
+    },
+    {
+      "model_name": "yi-large",
+      "cost": 0.95
+    },
+    {
+      "model_name": "yi-large-preview",
+      "cost": 1.0
+    },
+    {
+      "model_name": "yi-lightning-lite",
+      "cost": 0.004
+    },
+    {
+      "model_name": "yi-lightning",
+      "cost": 0.0057351688
+    },
+    {
+      "model_name": "gemma-2-9b-it",
+      "cost": 0.0873672873
+    },
+    {
+      "model_name": "llama-3.1-8b-instruct",
+      "cost": 0.1573721045
+    },
+    {
+      "model_name": "mixtral-8x7b-instruct-v0.1",
+      "cost": 0.2839726899
+    },
+    {
+      "model_name": "deepseek-v3",
+      "cost": 0.3002758331
+    },
+    {
+      "model_name": "glm-4-plus",
+      "cost": 0.3175377664
+    },
+    {
+      "model_name": "llama-3-70b-instruct",
+      "cost": 0.4186380435
+    },
+    {
+      "model_name": "gemini-1.5-flash-001",
+      "cost": 0.4549682765
+    },
+    {
+      "model_name": "gemini-2.0-flash-thinking-exp-1219",
+      "cost": 0.4626591495
+    },
+    {
+      "model_name": "gemma-2-27b-it",
+      "cost": 0.4732936067
+    },
+    {
+      "model_name": "gpt-4o-mini-2024-07-18",
+      "cost": 0.563652953
+    },
+    {
+      "model_name": "gemini-1.5-flash-002",
+      "cost": 0.6330942997
+    },
+    {
+      "model_name": "llama-3.3-70b-instruct",
+      "cost": 0.706256804
+    },
+    {
+      "model_name": "llama-3.1-70b-instruct",
+      "cost": 0.7204016024
+    },
+    {
+      "model_name": "athene-v2-chat",
+      "cost": 0.8097264049
+    },
+    {
+      "model_name": "gemini-2.0-flash-exp",
+      "cost": 0.8978088229
+    },
+    {
+      "model_name": "qwen2.5-72b-instruct",
+      "cost": 1.1805173434
+    },
+    {
+      "model_name": "claude-3-5-haiku-20241022",
+      "cost": 2.1765185825
+    },
+    {
+      "model_name": "llama-3.1-405b-instruct-fp8",
+      "cost": 2.4340008579
+    },
+    {
+      "model_name": "mixtral-8x22b-instruct-v0.1",
+      "cost": 2.5814904104
+    },
+    {
+      "model_name": "mistral-large-2407",
+      "cost": 4.3956843814
+    },
+    {
+      "model_name": "gemini-exp-1206",
+      "cost": 6.7210154899
+    },
+    {
+      "model_name": "gemini-1.5-pro-001",
+      "cost": 6.7456245955
+    },
+    {
+      "model_name": "gpt-4o-2024-08-06",
+      "cost": 6.9944337124
+    },
+    {
+      "model_name": "claude-3-5-sonnet-20241022",
+      "cost": 9.3110239362
+    },
+    {
+      "model_name": "claude-3-5-sonnet-20240620",
+      "cost": 9.4453041863
+    },
+    {
+      "model_name": "gemini-1.5-pro-002",
+      "cost": 9.6885059428
+    },
+    {
+      "model_name": "gpt-4o-2024-05-13",
+      "cost": 12.3166873868
+    },
+    {
+      "model_name": "chatgpt-4o-latest-20241120",
+      "cost": 12.9070929223
+    },
+    {
+      "model_name": "gpt-4-1106-preview",
+      "cost": 16.3622976323
+    },
+    {
+      "model_name": "o1-mini",
+      "cost": 16.4809912657
+    },
+    {
+      "model_name": "gpt-4-turbo-2024-04-09",
+      "cost": 17.4092447612
+    },
+    {
+      "model_name": "o1-preview",
+      "cost": 72.481802295
+    },
+    {
+      "model_name": "o1-2024-12-17",
+      "cost": 72.3693462194
+    }
+  ],
+  "statistics": {
+    "total_models": 34,
+    "cheapest_model": {
+      "name": "yi-lightning",
+      "cost": 0.0057351688
+    },
+    "most_expensive_model": {
+      "name": "o1-preview",
+      "cost": 72.481802295
+    },
+    "average_cost": 10.156891523894118,
+    "median_cost": 2.3286843342,
+    "cost_tiers": {
+      "ultra_cheap": {
+        "range": "< $0.50",
+        "count": 11,
+        "models": [
+          "yi-lightning",
+          "gemma-2-9b-it",
+          "llama-3.1-8b-instruct",
+          "mixtral-8x7b-instruct-v0.1",
+          "deepseek-v3",
+          "glm-4-plus",
+          "llama-3-70b-instruct",
+          "gemini-1.5-flash-001",
+          "gemini-2.0-flash-thinking-exp-1219",
+          "gemma-2-27b-it",
+          "gpt-4o-mini-2024-07-18"
+        ]
+      },
+      "cheap": {
+        "range": "$0.50 - $2.00",
+        "count": 6,
+        "models": [
+          "gemini-1.5-flash-002",
+          "llama-3.3-70b-instruct",
+          "llama-3.1-70b-instruct",
+          "athene-v2-chat",
+          "gemini-2.0-flash-exp",
+          "qwen2.5-72b-instruct"
+        ]
+      },
+      "moderate": {
+        "range": "$2.00 - $10.00",
+        "count": 9,
+        "models": [
+          "claude-3-5-haiku-20241022",
+          "llama-3.1-405b-instruct-fp8",
+          "mixtral-8x22b-instruct-v0.1",
+          "mistral-large-2407",
+          "gemini-exp-1206",
+          "gemini-1.5-pro-001",
+          "gpt-4o-2024-08-06",
+          "claude-3-5-sonnet-20241022",
+          "claude-3-5-sonnet-20240620",
+          "gemini-1.5-pro-002"
+        ]
+      },
+      "expensive": {
+        "range": "$10.00 - $20.00",
+        "count": 5,
+        "models": [
+          "gpt-4o-2024-05-13",
+          "chatgpt-4o-latest-20241120",
+          "gpt-4-1106-preview",
+          "o1-mini",
+          "gpt-4-turbo-2024-04-09"
+        ]
+      },
+      "ultra_expensive": {
+        "range": "> $20.00",
+        "count": 2,
+        "models": [
+          "o1-2024-12-17",
+          "o1-preview"
+        ]
+      }
+    }
+  }
+}
